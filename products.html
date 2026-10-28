@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {"colors": {"on-secondary": "#ffffff", "on-tertiary-fixed-variant": "#524600", "surface-container-highest": "#e3e2e3", "on-background": "#1b1c1d", "primary-fixed-dim": "#b1c5ff", "on-tertiary": "#ffffff", "inverse-surface": "#303031", "primary": "#094cb2", "tertiary-fixed-dim": "#dcc661", "on-error-container": "#93000a", "secondary": "#5a5f63", "outline": "#737784", "surface-container": "#efedee", "inverse-on-surface": "#f2f0f1", "primary-fixed": "#d9e2ff", "on-secondary-container": "#606569", "surface": "#faf9fa", "surface-variant": "#e3e2e3", "outline-variant": "#c3c6d5", "on-surface": "#1b1c1d", "surface-container-low": "#f5f3f4", "on-surface-variant": "#434653", "error": "#ba1a1a", "on-primary-fixed": "#001946", "surface-tint": "#2259bf", "inverse-primary": "#b1c5ff", "surface-container-high": "#e9e8e9", "background": "#faf9fa", "on-primary-container": "#e7ebff", "surface-container-lowest": "#ffffff", "secondary-container": "#dfe3e8", "primary-container": "#3366cc", "on-secondary-fixed": "#171c20", "secondary-fixed-dim": "#c2c7cc", "on-tertiary-container": "#4a3f00", "tertiary-fixed": "#f9e37a", "on-primary": "#ffffff", "surface-dim": "#dbdadb", "on-tertiary-fixed": "#211b00", "secondary-fixed": "#dfe3e8", "error-container": "#ffdad6", "surface-bright": "#faf9fa", "on-primary-fixed-variant": "#00419d", "tertiary": "#6d5e00", "on-error": "#ffffff", "tertiary-container": "#bfab49", "on-secondary-fixed-variant": "#42474b"}, "borderRadius": {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"}, "fontFamily": {"headline": ["Noto Serif"], "display": ["Noto Serif"], "body": ["Inter"], "label": ["Public Sans"]}}}};</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Serif:wght@100..900&family=Public+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+
+<style>
+/* Remove ALL large gaps among all pages */
+main section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+}
+main {
+    padding-top: 5rem !important;
+}
+
+/* Responsive Header Navigation: mobile (<700px) vs tablet/desktop (>=700px) */
+@media (max-width: 699px) {
+    .header-nav {
+        display: none !important;
+    }
+    .header-mobile-toggle {
+        display: flex !important;
+    }
+}
+@media (min-width: 700px) {
+    .header-nav {
+        display: flex !important;
+    }
+    .header-mobile-toggle {
+        display: none !important;
+    }
+    #mobile-menu-drawer {
+        display: none !important;
+    }
+}
+</style>
+
+<link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/aida-public/AB6AXuD_l90_g-5NBBHuX1wAmJWFD96CK9s8P2G13e4XaKImvRzAwmhW-ILXrGfUCZgMuUu-nsHgpDvBC5gqT49NDSmQl9LonRQczRxLbR3WGgovoWr4o7ui23z5hYVQgOC_GUv4YGOkh8kvXsFJlXLiEcUmVOFRlD8q8Dhs9p35AEeybXeNajClhcSQnHxZOlWjOvaWzRysfntUx5XtGENTLXtCOn6JYa9CvfYNDc7Zd_iaByrc3OJ3fg2n"/>
+<title>Aurumbrella | Products</title>
+</head><body class="bg-surface font-body text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-slate-200/60 dark:border-slate-800 shadow-[0_1px_8px_rgba(0,0,0,0.04)] transition-colors"><div class="h-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between"><a href="index.html" class="flex items-center gap-2 sm:gap-3 cursor-pointer hover:opacity-85 transition-opacity shrink-0"><img alt="Umbrella & Rain Gear Logo" class="h-7 sm:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_l90_g-5NBBHuX1wAmJWFD96CK9s8P2G13e4XaKImvRzAwmhW-ILXrGfUCZgMuUu-nsHgpDvBC5gqT49NDSmQl9LonRQczRxLbR3WGgovoWr4o7ui23z5hYVQgOC_GUv4YGOkh8kvXsFJlXLiEcUmVOFRlD8q8Dhs9p35AEeybXeNajClhcSQnHxZOlWjOvaWzRysfntUx5XtGENTLXtCOn6JYa9CvfYNDc7Zd_iaByrc3OJ3fg2n"/><span class="text-lg sm:text-xl font-headline font-bold tracking-tight text-on-surface whitespace-nowrap">Aurumbrella</span></a><nav class="header-nav hidden sm:flex items-center gap-1 md:gap-1.5 lg:gap-5 xl:gap-6 relative">
+  <div class="relative group">
+    <button class="nav-dropdown-btn text-xs lg:text-sm text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-0.5 md:gap-1 px-2 py-1 md:px-2.5 lg:px-3 rounded-lg whitespace-nowrap" aria-haspopup="true"><span>Home</span> <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">expand_more</span></button>
+    <div class="nav-dropdown-menu absolute left-0 top-full mt-1 w-36 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200/80 dark:border-slate-700/80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex flex-col p-2 z-50">
+      <a class="nav-link text-sm text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-700/60 px-3 py-2 rounded-lg transition-colors font-medium" href="index.html">Home 1</a>
+      <a class="nav-link text-sm text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-700/60 px-3 py-2 rounded-lg transition-colors font-medium" href="home_2.html">Home 2</a>
+    </div>
+  </div>
+  <a class="nav-link text-xs lg:text-sm text-on-surface-variant hover:text-on-surface transition-colors px-2 py-1 md:px-2.5 lg:px-3 rounded-lg whitespace-nowrap nav-active font-semibold" href="products.html">Products</a>
+  <a class="nav-link text-xs lg:text-sm text-on-surface-variant hover:text-on-surface transition-colors px-2 py-1 md:px-2.5 lg:px-3 rounded-lg whitespace-nowrap" href="custom_branding.html">Custom Branding</a>
+  <a class="nav-link text-xs lg:text-sm text-on-surface-variant hover:text-on-surface transition-colors px-2 py-1 md:px-2.5 lg:px-3 rounded-lg whitespace-nowrap" href="warranty.html">Warranty</a>
+  <a class="nav-link text-xs lg:text-sm text-on-surface-variant hover:text-on-surface transition-colors px-2 py-1 md:px-2.5 lg:px-3 rounded-lg whitespace-nowrap" href="contact.html">Contact</a>
+</nav><div class="flex items-center gap-1 sm:gap-2 lg:gap-4 shrink-0"><button class="text-on-surface-variant hover:text-on-surface p-1.5 sm:p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Dark/Light Mode"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button><button class="text-on-surface-variant hover:text-on-surface p-1.5 sm:p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle RTL/LTR"><span class="material-symbols-outlined text-[20px]">swap_horiz</span></button><a href="products.html" class="text-on-surface-variant hover:text-on-surface cursor-pointer p-1.5 sm:p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors inline-flex items-center" title="Go to Products"><span class="material-symbols-outlined text-[20px]">shopping_bag</span></a><button id="mobile-menu-btn" class="header-mobile-toggle sm:hidden p-1.5 sm:p-2 text-on-surface-variant hover:text-on-surface hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors flex items-center justify-center shrink-0" aria-label="Toggle Navigation Menu"><span class="material-symbols-outlined text-[24px]" id="mobile-menu-icon">menu</span></button></div></div><div id="mobile-menu-drawer" class="sm:hidden hidden border-t border-slate-200/80 dark:border-slate-800 bg-surface/98 dark:bg-slate-900/98 backdrop-blur-2xl px-6 py-5 shadow-2xl transition-all"><div class="flex flex-col gap-2"><div class="py-1"><span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 px-3">Home Editions</span><div class="mt-1 flex flex-col gap-1 pl-2"><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2 rounded-lg transition-colors flex items-center justify-between" href="index.html"><span>Home 1 (Signature)</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2 rounded-lg transition-colors flex items-center justify-between" href="home_2.html"><span>Home 2 (Editorial)</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a></div></div><div class="h-px bg-slate-200/80 dark:bg-slate-800 my-1"></div><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2.5 rounded-lg transition-colors font-medium flex items-center justify-between nav-active" href="products.html"><span>Products</span><span class="material-symbols-outlined text-[16px]">storefront</span></a><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2.5 rounded-lg transition-colors font-medium flex items-center justify-between" href="custom_branding.html"><span>Custom Branding</span><span class="material-symbols-outlined text-[16px]">corporate_fare</span></a><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2.5 rounded-lg transition-colors font-medium flex items-center justify-between" href="warranty.html"><span>Warranty</span><span class="material-symbols-outlined text-[16px]">verified_user</span></a><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2.5 rounded-lg transition-colors font-medium flex items-center justify-between" href="contact.html"><span>Contact</span><span class="material-symbols-outlined text-[16px]">mail</span></a></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- 1. Category Header & Filter Bar -->
+<section class="w-full px-6 lg:px-12 py-24 bg-surface-container-lowest flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 pointer-events-none z-0">
+  <div class="absolute -top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"></div>
+  <div class="absolute top-20 right-1/4 w-96 h-96 bg-tertiary-fixed/10 rounded-full blur-[100px]"></div>
+</div>
+
+<div class="max-w-4xl mx-auto w-full flex flex-col items-center text-center gap-6 relative z-10">
+  <div class="flex items-center gap-2 mb-2 bg-surface-container-high px-4 py-1.5 rounded-full border border-outline-variant/30">
+    <span class="text-xs font-label uppercase tracking-widest text-primary font-bold">Archival Collection</span>
+    <span class="text-xs text-outline">•</span>
+    <span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">2026 Edition</span>
+  </div>
+  
+  <h1 class="text-5xl md:text-7xl font-headline font-bold text-on-surface tracking-tight leading-tight">
+    Specialty Rain Gear
+  </h1>
+  
+  <p class="text-on-surface-variant max-w-2xl mt-2 font-body text-lg md:text-xl leading-relaxed">
+    Engineered for relentless downpours and architectural elegance. Discover wind-tunnel tested canopies and waterproof textiles.
+  </p>
+</div>
+
+<div class="max-w-4xl mx-auto w-full mt-12 flex flex-wrap justify-center items-center gap-4 relative z-10 pt-8 border-t border-outline-variant/15">
+  <button class="px-8 py-3.5 rounded-full bg-primary text-on-primary font-label text-sm transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">All Gear (24)</button>
+  <button class="px-8 py-3.5 rounded-full bg-surface-container-high text-on-surface font-label text-sm hover:bg-surface-dim transition-all shadow-sm border border-outline-variant/20 hover:border-primary/30">Umbrellas (12)</button>
+  <button class="px-8 py-3.5 rounded-full bg-surface-container-high text-on-surface font-label text-sm hover:bg-surface-dim transition-all shadow-sm border border-outline-variant/20 hover:border-primary/30">Raincoats (8)</button>
+  <button class="px-8 py-3.5 rounded-full bg-surface-container-high text-on-surface font-label text-sm hover:bg-surface-dim transition-all shadow-sm border border-outline-variant/20 hover:border-primary/30">Waterproof Bags (4)</button>
+</div>
+</section>
+<!-- 2. Featured Products Grid -->
+<section class="w-full px-6 lg:px-12 py-24 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="text-xs font-label uppercase tracking-widest text-tertiary">Curated Selection</span>
+<h2 class="text-3xl md:text-4xl font-headline font-bold text-on-surface mt-2">Masterpieces in Storm Protection</h2>
+</div>
+<span class="hidden md:block text-sm text-on-surface-variant font-label">Showing 1–6 of 24 items</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Product 1 -->
+<div class="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl">
+<div class="relative w-full h-96 overflow-hidden bg-surface-container">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A luxurious dark navy compact umbrella resting on a wet dark slate surface, dramatic studio side lighting, high-end editorial product photography, sleek matte metal handle." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYB5cLrr5whW_RsRn-8gQii01v6EfZiDsp_41b3RGOiy_KkMKNVtHqQ_komoUaEvBVvwWwla69hEqx3JTv6-eHfCVRPMLFiwC0rdfpT8DrXessH6tZucqiuA5llJb7NCoc2Ot6xY-cz0cmQxR6jVh3i35FaCXf22NzaDgmoVSc5kCGWI3soh2DD67iUtSXdLBHbG_rVdYWa_Mm5OSfM9yiIdlxup9c2596OzM-dreZ0Gfl-T_zrFgb')"></div>
+<span class="absolute top-4 left-4 bg-tertiary text-on-tertiary text-xs font-label uppercase tracking-wider px-3 py-1 rounded">Bestseller</span>
+<button class="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-surface-container-lowest/90 backdrop-blur-md flex items-center justify-center text-primary shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</button>
+</div>
+<div class="p-6 flex flex-col flex-grow justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-lg text-on-surface">The Regent Automatic</h3>
+<span class="font-label font-bold text-primary">$185</span>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-2">Wind-tunnel tested up to 85mph with aerospace grade carbon fiber ribs.</p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/15 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-slate-900 ring-1 ring-outline-variant/30"></span>
+<span class="w-3 h-3 rounded-full bg-stone-500 ring-1 ring-outline-variant/30"></span>
+<span class="w-3 h-3 rounded-full bg-amber-900 ring-1 ring-outline-variant/30"></span>
+</div>
+<span class="text-xs font-label text-on-surface-variant">3 Colors Available</span>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl">
+<div class="relative w-full h-96 overflow-hidden bg-surface-container">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="An olive green trench-style waterproof raincoat draped on a mannequin, minimalist concrete studio background, cinematic moody lighting, water droplets visibly beading on fabric." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAKI0UnxnFDhBZNHJdfsnnCyG34iKDOS5ecAEx8YHieMy276wYyMWec_ywwAw8Ce9fHHTobZoyqZURHi0Z8Nqc3UIDYNWPYaqEPv3zjv_5yKOp5rTBZXXsPMgOHzj7RuZbyFzehYXCKigxIgh-nurKvbSseGNFe_xMqzC3fqdxCeMVozqVaM9IYLK2NcQcmt7dSsirn6c7Q6OWPeSNxfabDzHosIfWnEsFEG4PrBRJTGE_IDsoidm0G')"></div>
+<span class="absolute top-4 left-4 bg-primary text-on-primary text-xs font-label uppercase tracking-wider px-3 py-1 rounded">New Arrival</span>
+<button class="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-surface-container-lowest/90 backdrop-blur-md flex items-center justify-center text-primary shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</button>
+</div>
+<div class="p-6 flex flex-col flex-grow justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-lg text-on-surface">Mayfair Trench Raincoat</h3>
+<span class="font-label font-bold text-primary">$420</span>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-2">Three-layer breathable membrane with sealed seams and horn-engraved buttons.</p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/15 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-emerald-900 ring-1 ring-outline-variant/30"></span>
+<span class="w-3 h-3 rounded-full bg-stone-700 ring-1 ring-outline-variant/30"></span>
+</div>
+<span class="text-xs font-label text-on-surface-variant">2 Colors Available</span>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl">
+<div class="relative w-full h-96 overflow-hidden bg-surface-container">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A sleek black waterproof leather backpack sitting on a modern wooden desk, dramatic lighting highlighting the waterproof zipper tape and matte texture." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAm5kcSQbpYSSxXC_7ct40VJrsedQN4OyhteuYRRdZrtYUAvO6clFaHg-dsUcPcHGuXXa2sI1df1CBQWftE3oydSxceaXKUoN3ovYlkJFitTRy_oIy5tzCYreFWv1vSbkkB0pTXk__FkTmDD9nF-L6DA4doROklYVB9mC-emMJK5gy0jCeHyOzVw813VfyG3FuSI5oFXKzBEjjGo9zT9bADeb14h7ZGRB2uK33zn4h45JcXiev90wI7')"></div>
+<span class="absolute top-4 left-4 bg-tertiary text-on-tertiary text-xs font-label uppercase tracking-wider px-3 py-1 rounded">Limited Edition</span>
+<button class="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-surface-container-lowest/90 backdrop-blur-md flex items-center justify-center text-primary shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</button>
+</div>
+<div class="p-6 flex flex-col flex-grow justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-lg text-on-surface">The Piccadilly Rolltop Pack</h3>
+<span class="font-label font-bold text-primary">$295</span>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-2">Fully waterproof welded construction with a padded compartment for 16-inch laptops.</p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/15 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-neutral-900 ring-1 ring-outline-variant/30"></span>
+<span class="w-3 h-3 rounded-full bg-blue-950 ring-1 ring-outline-variant/30"></span>
+</div>
+<span class="text-xs font-label text-on-surface-variant">2 Colors Available</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Material Specification Banner -->
+<section class="w-full px-6 lg:px-12 py-24 bg-surface-container-lowest relative overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<span class="text-xs font-label uppercase tracking-widest text-primary">Uncompromising Craft</span>
+<h2 class="text-3xl md:text-5xl font-headline font-bold text-on-surface mt-3 mb-6 leading-tight">
+          300T High-Density Pongee Silk & Marine-Grade Aluminum
+        </h2>
+<p class="text-on-surface-variant font-body text-base leading-relaxed mb-8">
+          Every Aurumbrella canopy is woven from ultra-fine 300T threads, achieving a hydrophobic lotus-effect that repels moisture instantly. Coupled with lightweight, corrosion-resistant marine-grade aluminum framing, our pieces withstand nature's harshest elements without weighing you down.
+        </p>
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl">
+<span class="block font-headline font-bold text-3xl text-primary mb-1">300T</span>
+<span class="text-xs font-label uppercase tracking-wider text-on-surface-variant">Pongee Silk Density</span>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl">
+<span class="block font-headline font-bold text-3xl text-primary mb-1">85 MPH</span>
+<span class="text-xs font-label uppercase tracking-wider text-on-surface-variant">Wind-Tunnel Tested</span>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="relative w-full h-[500px] rounded-xl overflow-hidden shadow-2xl bg-surface-container">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Extreme macro photography of water droplets beading perfectly on deep navy 300T pongee silk umbrella fabric, studio macro lighting, sharp focus on surface tension." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAiOJpSzGfs918s3XnUirrmuycq8Aj9mCYLsSA_zyq8Cha-1eGDRfQkewCkSbxi4xSBM7W6ch-ayEDsVGWkC2cSIWlpMYlLAPkGNH0XdCosjn5DbkMrtmR_MjL00Lc2aYiGpbXDcSo1oGlM5MJyWNDIJrFzJvKwHNdzYzOKCBlPX6lVGvpOLEbJGtMNK83ZZsduIm4VODd3Bp0Jz6Ehbs_BwdcjKqtyRLFxbh2bYC1YojwBlcL2-nmu')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Size & Wind Resistance Guide -->
+<section class="w-full px-6 lg:px-12 py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-xs font-label uppercase tracking-widest text-tertiary">Performance Metrics</span>
+<h2 class="text-3xl md:text-4xl font-headline font-bold text-on-surface mt-2">Canopy Span & Wind Resistance</h2>
+<p class="text-on-surface-variant mt-3 text-sm">Compare our models across rigorous atmospheric stress tests to find your ideal companion.</p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/15 text-xs font-label uppercase tracking-wider text-on-surface-variant">
+<th class="py-4 px-6">Model</th>
+<th class="py-4 px-6">Canopy Span</th>
+<th class="py-4 px-6">Weight</th>
+<th class="py-4 px-6">Wind Rating</th>
+<th class="py-4 px-6">Rib Construction</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10 text-sm font-body">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-5 px-6 font-headline font-bold text-on-surface">The Regent Automatic</td>
+<td class="py-5 px-6 text-on-surface-variant">43 inches (110 cm)</td>
+<td class="py-5 px-6 text-on-surface-variant">380g</td>
+<td class="py-5 px-6 font-medium text-primary">85 MPH (Category 1)</td>
+<td class="py-5 px-6 text-on-surface-variant">Carbon Fiber / Aluminum</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-5 px-6 font-headline font-bold text-on-surface">Mayfair Compact</td>
+<td class="py-5 px-6 text-on-surface-variant">38 inches (96 cm)</td>
+<td class="py-5 px-6 text-on-surface-variant">260g</td>
+<td class="py-5 px-6 font-medium text-primary">65 MPH (Gale Force)</td>
+<td class="py-5 px-6 text-on-surface-variant">Flexible Fiberglass</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-5 px-6 font-headline font-bold text-on-surface">Grand Westminster Golf</td>
+<td class="py-5 px-6 text-on-surface-variant">52 inches (132 cm)</td>
+<td class="py-5 px-6 text-on-surface-variant">540g</td>
+<td class="py-5 px-6 font-medium text-primary">95 MPH (Severe Gale)</td>
+<td class="py-5 px-6 text-on-surface-variant">Double-Vented Carbon</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- 5. Customer Reviews & Ratings -->
+<section class="w-full px-6 lg:px-12 py-24 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center mb-16">
+<div>
+<span class="text-xs font-label uppercase tracking-widest text-primary">Client Testimonials</span>
+<h2 class="text-3xl md:text-4xl font-headline font-bold text-on-surface mt-2">Verified Feedback</h2>
+<div class="flex items-center gap-2 mt-4">
+<div class="flex text-tertiary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label font-bold text-on-surface">4.9 / 5.0</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-2">Based on 1,420+ verified reviews from global connoisseurs.</p>
+</div>
+<div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col justify-between">
+<p class="text-sm text-on-surface font-body italic mb-6">"The absolute pinnacle of rain gear. Survived a torrential downpour in London without a single drop penetrating the fabric."</p>
+<div class="flex items-center justify-between">
+<span class="font-label font-bold text-xs uppercase tracking-wider text-on-surface">Lord Alistair Sterling</span>
+<span class="text-xs text-on-surface-variant">Verified Buyer</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col justify-between">
+<p class="text-sm text-on-surface font-body italic mb-6">"Immaculate construction. The automatic mechanism feels like Swiss clockwork, and the handle grain is breathtaking."</p>
+<div class="flex items-center justify-between">
+<span class="font-label font-bold text-xs uppercase tracking-wider text-on-surface">Dr. Genevieve Vance</span>
+<span class="text-xs text-on-surface-variant">Verified Buyer</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-low py-16"><div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"><div class="flex flex-col gap-4"><a href="index.html" class="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"><img alt="Umbrella & Rain Gear Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_l90_g-5NBBHuX1wAmJWFD96CK9s8P2G13e4XaKImvRzAwmhW-ILXrGfUCZgMuUu-nsHgpDvBC5gqT49NDSmQl9LonRQczRxLbR3WGgovoWr4o7ui23z5hYVQgOC_GUv4YGOkh8kvXsFJlXLiEcUmVOFRlD8q8Dhs9p35AEeybXeNajClhcSQnHxZOlWjOvaWzRysfntUx5XtGENTLXtCOn6JYa9CvfYNDc7Zd_iaByrc3OJ3fg2n"/><span class="text-xl font-headline font-bold tracking-tight text-on-surface">Aurumbrella</span></a><p class="text-sm text-on-surface-variant">High-end editorial rain gear and specialty umbrellas crafted for the discerning individual.</p></div><div><h4 class="font-headline font-bold text-on-surface mb-4">Quick Links</h4><ul class="flex flex-col gap-2 text-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" href="#">Our Heritage</a></li><li><a class="hover:text-primary transition-colors" href="#">Care Guide</a></li><li><a class="hover:text-primary transition-colors" href="#">Store Locator</a></li><li><a class="hover:text-primary transition-colors" href="#">Sustainability</a></li></ul></div><div><h4 class="font-headline font-bold text-on-surface mb-4">Newsletter</h4><p class="text-sm text-on-surface-variant mb-4">Subscribe to receive seasonal lookbooks and archival releases.</p><div class="flex"><input class="bg-surface-container-lowest px-4 py-2 text-sm w-full outline-none focus:ring-1 focus:ring-primary" placeholder="Your email" type="email"/><button class="bg-primary text-on-primary px-4 py-2 text-sm font-medium">Join</button></div></div><div><h4 class="font-headline font-bold text-on-surface mb-4">Contact</h4><p class="text-sm text-on-surface-variant mb-2">Concierge Services</p><p class="text-sm text-on-surface-variant">support@aurumbrella.com</p></div></div><div class="max-w-7xl mx-auto px-6 lg:px-12 mt-12 pt-8 border-t border-outline-variant/15 text-center text-on-surface-variant text-sm">© 2026 Aurumbrella. All rights reserved.</div></footer>
+<script>
+// State management script
+document.addEventListener('DOMContentLoaded', () => {
+    // Navigation active state
+    let currentPage = window.location.pathname.split('/').pop() || 'products.html';
+    if (currentPage === '' || currentPage === 'stormshield') currentPage = 'index.html';
+    
+    document.querySelectorAll('.nav-link, .nav-link-mobile').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+            link.classList.add('nav-active');
+            link.classList.remove('text-on-surface-variant', 'text-slate-700');
+            
+            const dropdownBtn = link.closest('.group')?.querySelector('.nav-dropdown-btn');
+            if (dropdownBtn) {
+                dropdownBtn.classList.add('nav-active');
+                dropdownBtn.classList.remove('text-on-surface-variant');
+            }
+        } else {
+            link.classList.remove('nav-active');
+        }
+    });
+
+    // Mobile Hamburger Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+    const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+    if (mobileMenuBtn && mobileMenuDrawer) {
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenuDrawer.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenuDrawer.classList.remove('hidden');
+                if (mobileMenuIcon) mobileMenuIcon.textContent = 'close';
+            } else {
+                mobileMenuDrawer.classList.add('hidden');
+                if (mobileMenuIcon) mobileMenuIcon.textContent = 'menu';
+            }
+        });
+    }
+
+    // Brand name click
+    const brandElement = document.querySelector('header h1, header .brand, header img[alt*="logo" i]');
+    if (brandElement) {
+        brandElement.style.cursor = 'pointer';
+        brandElement.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    }
+
+    // Dark/Light mode and RTL/LTR persistence
+    const themeButton = [...document.querySelectorAll('button')].find(b => b.textContent.includes('dark_mode') || b.textContent.includes('light_mode'));
+    const rtlButton = [...document.querySelectorAll('button')].find(b => b.textContent.includes('swap_horiz') || b.textContent.includes('LTR') || b.textContent.includes('RTL'));
+    
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+    } else if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+    }
+
+    const savedDir = localStorage.getItem('dir');
+    if (savedDir === 'rtl') {
+        document.documentElement.setAttribute('dir', 'rtl');
+    } else if (savedDir === 'ltr') {
+        document.documentElement.setAttribute('dir', 'ltr');
+    }
+
+    if (themeButton) {
+        const newThemeBtn = themeButton.cloneNode(true);
+        themeButton.parentNode.replaceChild(newThemeBtn, themeButton);
+        
+        const iconSpan = newThemeBtn.querySelector('span');
+        if (iconSpan) {
+            iconSpan.textContent = document.documentElement.classList.contains('dark') ? 'light_mode' : 'dark_mode';
+        }
+
+        newThemeBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            
+            if (isDark) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+            
+            if (iconSpan) {
+                iconSpan.textContent = isDark ? 'light_mode' : 'dark_mode';
+            }
+        });
+    }
+
+    if (rtlButton) {
+        const newRtlBtn = rtlButton.cloneNode(true);
+        rtlButton.parentNode.replaceChild(newRtlBtn, rtlButton);
+        newRtlBtn.addEventListener('click', () => {
+            const currentDir = document.documentElement.getAttribute('dir');
+            if (currentDir === 'rtl') {
+                document.documentElement.setAttribute('dir', 'ltr');
+                localStorage.setItem('dir', 'ltr');
+            } else {
+                document.documentElement.setAttribute('dir', 'rtl');
+                localStorage.setItem('dir', 'rtl');
+            }
+        });
+    }
+
+    // Remove empty spaces
+    document.querySelectorAll('section, div.container').forEach(el => {
+        if (el.innerHTML.trim() === '' || el.children.length === 0) {
+            el.style.display = 'none';
+        }
+    });
+});
+</script>
+<style>
+/* Prevent horizontal overflow on mobile/tablet */
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+/* High Contrast Navigation Active State */
+.nav-link.nav-active, .nav-dropdown-btn.nav-active, .nav-link-mobile.nav-active {
+    color: #094cb2 !important;
+    background-color: #e0edff !important;
+    font-weight: 700 !important;
+}
+.dark .nav-link.nav-active, .dark .nav-dropdown-btn.nav-active, .dark .nav-link-mobile.nav-active {
+    color: #38bdf8 !important;
+    background-color: rgba(56, 189, 248, 0.18) !important;
+    font-weight: 700 !important;
+}
+
+/* Home Dropdown High Contrast Styles */
+.nav-dropdown-btn {
+    color: #334155 !important;
+    font-weight: 500;
+}
+.dark .nav-dropdown-btn {
+    color: #f1f5f9 !important;
+    font-weight: 500;
+}
+.nav-dropdown-btn:hover:not(.nav-active) {
+    color: #094cb2 !important;
+    background-color: #f1f5f9 !important;
+}
+.dark .nav-dropdown-btn:hover:not(.nav-active) {
+    color: #38bdf8 !important;
+    background-color: #1e293b !important;
+}
+.nav-dropdown-btn.nav-active {
+    color: #094cb2 !important;
+    background-color: #e0edff !important;
+    font-weight: 700 !important;
+    border: 1px solid #bfdbfe !important;
+}
+.dark .nav-dropdown-btn.nav-active {
+    color: #38bdf8 !important;
+    background-color: rgba(56, 189, 248, 0.2) !important;
+    font-weight: 700 !important;
+    border: 1px solid rgba(56, 189, 248, 0.35) !important;
+}
+
+.nav-dropdown-menu {
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08) !important;
+}
+.dark .nav-dropdown-menu {
+    background-color: #1e293b !important;
+    border: 1px solid #475569 !important;
+    box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.6) !important;
+}
+.nav-dropdown-menu a.nav-link {
+    color: #0f172a !important;
+    font-weight: 600 !important;
+    transition: all 0.15s ease-in-out !important;
+}
+.dark .nav-dropdown-menu a.nav-link {
+    color: #f8fafc !important;
+    font-weight: 600 !important;
+}
+.nav-dropdown-menu a.nav-link:hover:not(.nav-active) {
+    background-color: #eff6ff !important;
+    color: #094cb2 !important;
+    font-weight: 700 !important;
+}
+.dark .nav-dropdown-menu a.nav-link:hover:not(.nav-active) {
+    background-color: #334155 !important;
+    color: #38bdf8 !important;
+    font-weight: 700 !important;
+}
+.nav-dropdown-menu a.nav-link.nav-active {
+    background-color: #094cb2 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 6px rgba(9, 76, 178, 0.25) !important;
+}
+.dark .nav-dropdown-menu a.nav-link.nav-active {
+    background-color: #0284c7 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4) !important;
+}
+.nav-dropdown-menu a.nav-link.nav-active:hover {
+    background-color: #073b8a !important;
+    color: #ffffff !important;
+}
+.dark .nav-dropdown-menu a.nav-link.nav-active:hover {
+    background-color: #0369a1 !important;
+    color: #ffffff !important;
+}
+
+/* Ensure text is visible in dark mode */
+.dark body {
+    background-color: #0f172a !important;
+    color: #f8fafc !important;
+}
+
+/* Base surface overrides */
+.dark .bg-surface {
+    background-color: #0f172a !important;
+}
+.dark .bg-surface-container-lowest,
+.dark .bg-surface-container-low {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+}
+.dark .bg-surface-container,
+.dark .bg-surface-container-high,
+.dark .bg-surface-container-highest {
+    background-color: #334155 !important;
+    border: 1px solid #475569 !important;
+}
+
+.dark [class*="bg-surface"] {
+    color: #f8fafc !important;
+}
+
+/* Header */
+.dark header[class*="bg-surface"] {
+    background-color: rgba(15, 23, 42, 0.92) !important;
+    border-bottom: 1px solid #1e293b !important;
+}
+
+/* Text overrides */
+.dark [class*="text-on-surface"] {
+    color: #f1f5f9 !important;
+}
+.dark .text-primary {
+    color: #38bdf8 !important;
+}
+.dark .text-tertiary {
+    color: #facc15 !important;
+}
+.dark .bg-primary-container, .dark .bg-primary-container\/20 {
+    background-color: rgba(56, 189, 248, 0.15) !important;
+}
+.dark .bg-primary {
+    background-color: #0284c7 !important;
+}
+.dark [class*="from-primary"] {
+    background-image: linear-gradient(to right, #0369a1, #0284c7) !important;
+}
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6, .dark p, .dark a {
+    color: inherit;
+}
+.dark .bg-white {
+    background-color: #1e293b !important;
+}
+.dark [class*="text-gray-"] {
+    color: #e2e8f0 !important;
+}
+.dark span.material-symbols-outlined {
+    color: inherit !important;
+}
+
+/* Footer specific fixes */
+.dark footer input, .dark footer textarea {
+    background-color: #0f172a !important;
+    border: 1px solid #334155 !important;
+    color: #f8fafc !important;
+}
+.dark footer [class*="bg-surface-container"] {
+    background-color: #0f172a !important; 
+}
+
+/* Remove unwanted empty space */
+section:empty {
+    display: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+</style>
+
+</body></html>

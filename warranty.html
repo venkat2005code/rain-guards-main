@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {"colors": {"on-secondary": "#ffffff", "on-tertiary-fixed-variant": "#524600", "surface-container-highest": "#e3e2e3", "on-background": "#1b1c1d", "primary-fixed-dim": "#b1c5ff", "on-tertiary": "#ffffff", "inverse-surface": "#303031", "primary": "#094cb2", "tertiary-fixed-dim": "#dcc661", "on-error-container": "#93000a", "secondary": "#5a5f63", "outline": "#737784", "surface-container": "#efedee", "inverse-on-surface": "#f2f0f1", "primary-fixed": "#d9e2ff", "on-secondary-container": "#606569", "surface": "#faf9fa", "surface-variant": "#e3e2e3", "outline-variant": "#c3c6d5", "on-surface": "#1b1c1d", "surface-container-low": "#f5f3f4", "on-surface-variant": "#434653", "error": "#ba1a1a", "on-primary-fixed": "#001946", "surface-tint": "#2259bf", "inverse-primary": "#b1c5ff", "surface-container-high": "#e9e8e9", "background": "#faf9fa", "on-primary-container": "#e7ebff", "surface-container-lowest": "#ffffff", "secondary-container": "#dfe3e8", "primary-container": "#3366cc", "on-secondary-fixed": "#171c20", "secondary-fixed-dim": "#c2c7cc", "on-tertiary-container": "#4a3f00", "tertiary-fixed": "#f9e37a", "on-primary": "#ffffff", "surface-dim": "#dbdadb", "on-tertiary-fixed": "#211b00", "secondary-fixed": "#dfe3e8", "error-container": "#ffdad6", "surface-bright": "#faf9fa", "on-primary-fixed-variant": "#00419d", "tertiary": "#6d5e00", "on-error": "#ffffff", "tertiary-container": "#bfab49", "on-secondary-fixed-variant": "#42474b"}, "borderRadius": {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"}, "fontFamily": {"headline": ["Noto Serif"], "display": ["Noto Serif"], "body": ["Inter"], "label": ["Public Sans"]}}}};</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Serif:wght@100..900&family=Public+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+
+<style>
+/* Remove ALL large gaps among all pages */
+main section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+}
+main {
+    padding-top: 5rem !important;
+}
+
+/* Responsive Header Navigation: mobile (<700px) vs tablet/desktop (>=700px) */
+@media (max-width: 699px) {
+    .header-nav {
+        display: none !important;
+    }
+    .header-mobile-toggle {
+        display: flex !important;
+    }
+}
+@media (min-width: 700px) {
+    .header-nav {
+        display: flex !important;
+    }
+    .header-mobile-toggle {
+        display: none !important;
+    }
+    #mobile-menu-drawer {
+        display: none !important;
+    }
+}
+</style>
+
+<link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/aida-public/AB6AXuD_l90_g-5NBBHuX1wAmJWFD96CK9s8P2G13e4XaKImvRzAwmhW-ILXrGfUCZgMuUu-nsHgpDvBC5gqT49NDSmQl9LonRQczRxLbR3WGgovoWr4o7ui23z5hYVQgOC_GUv4YGOkh8kvXsFJlXLiEcUmVOFRlD8q8Dhs9p35AEeybXeNajClhcSQnHxZOlWjOvaWzRysfntUx5XtGENTLXtCOn6JYa9CvfYNDc7Zd_iaByrc3OJ3fg2n"/>
+<title>Aurumbrella | Warranty</title>
+</head><body class="bg-surface font-body text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-slate-200/60 dark:border-slate-800 shadow-[0_1px_8px_rgba(0,0,0,0.04)] transition-colors"><div class="h-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between"><a href="index.html" class="flex items-center gap-2 sm:gap-3 cursor-pointer hover:opacity-85 transition-opacity shrink-0"><img alt="Umbrella & Rain Gear Logo" class="h-7 sm:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_l90_g-5NBBHuX1wAmJWFD96CK9s8P2G13e4XaKImvRzAwmhW-ILXrGfUCZgMuUu-nsHgpDvBC5gqT49NDSmQl9LonRQczRxLbR3WGgovoWr4o7ui23z5hYVQgOC_GUv4YGOkh8kvXsFJlXLiEcUmVOFRlD8q8Dhs9p35AEeybXeNajClhcSQnHxZOlWjOvaWzRysfntUx5XtGENTLXtCOn6JYa9CvfYNDc7Zd_iaByrc3OJ3fg2n"/><span class="text-lg sm:text-xl font-headline font-bold tracking-tight text-on-surface whitespace-nowrap">Aurumbrella</span></a><nav class="header-nav hidden sm:flex items-center gap-1 md:gap-1.5 lg:gap-5 xl:gap-6 relative">
+  <div class="relative group">
+    <button class="nav-dropdown-btn text-xs lg:text-sm text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-0.5 md:gap-1 px-2 py-1 md:px-2.5 lg:px-3 rounded-lg whitespace-nowrap" aria-haspopup="true"><span>Home</span> <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">expand_more</span></button>
+    <div class="nav-dropdown-menu absolute left-0 top-full mt-1 w-36 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200/80 dark:border-slate-700/80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex flex-col p-2 z-50">
+      <a class="nav-link text-sm text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-700/60 px-3 py-2 rounded-lg transition-colors font-medium" href="index.html">Home 1</a>
+      <a class="nav-link text-sm text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-700/60 px-3 py-2 rounded-lg transition-colors font-medium" href="home_2.html">Home 2</a>
+    </div>
+  </div>
+  <a class="nav-link text-xs lg:text-sm text-on-surface-variant hover:text-on-surface transition-colors px-2 py-1 md:px-2.5 lg:px-3 rounded-lg whitespace-nowrap" href="products.html">Products</a>
+  <a class="nav-link text-xs lg:text-sm text-on-surface-variant hover:text-on-surface transition-colors px-2 py-1 md:px-2.5 lg:px-3 rounded-lg whitespace-nowrap" href="custom_branding.html">Custom Branding</a>
+  <a class="nav-link text-xs lg:text-sm text-on-surface-variant hover:text-on-surface transition-colors px-2 py-1 md:px-2.5 lg:px-3 rounded-lg whitespace-nowrap nav-active font-semibold" href="warranty.html">Warranty</a>
+  <a class="nav-link text-xs lg:text-sm text-on-surface-variant hover:text-on-surface transition-colors px-2 py-1 md:px-2.5 lg:px-3 rounded-lg whitespace-nowrap" href="contact.html">Contact</a>
+</nav><div class="flex items-center gap-1 sm:gap-2 lg:gap-4 shrink-0"><button class="text-on-surface-variant hover:text-on-surface p-1.5 sm:p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Dark/Light Mode"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button><button class="text-on-surface-variant hover:text-on-surface p-1.5 sm:p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle RTL/LTR"><span class="material-symbols-outlined text-[20px]">swap_horiz</span></button><a href="products.html" class="text-on-surface-variant hover:text-on-surface cursor-pointer p-1.5 sm:p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors inline-flex items-center" title="Go to Products"><span class="material-symbols-outlined text-[20px]">shopping_bag</span></a><button id="mobile-menu-btn" class="header-mobile-toggle sm:hidden p-1.5 sm:p-2 text-on-surface-variant hover:text-on-surface hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors flex items-center justify-center shrink-0" aria-label="Toggle Navigation Menu"><span class="material-symbols-outlined text-[24px]" id="mobile-menu-icon">menu</span></button></div></div><div id="mobile-menu-drawer" class="sm:hidden hidden border-t border-slate-200/80 dark:border-slate-800 bg-surface/98 dark:bg-slate-900/98 backdrop-blur-2xl px-6 py-5 shadow-2xl transition-all"><div class="flex flex-col gap-2"><div class="py-1"><span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 px-3">Home Editions</span><div class="mt-1 flex flex-col gap-1 pl-2"><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2 rounded-lg transition-colors flex items-center justify-between" href="index.html"><span>Home 1 (Signature)</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2 rounded-lg transition-colors flex items-center justify-between" href="home_2.html"><span>Home 2 (Editorial)</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a></div></div><div class="h-px bg-slate-200/80 dark:bg-slate-800 my-1"></div><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2.5 rounded-lg transition-colors font-medium flex items-center justify-between" href="products.html"><span>Products</span><span class="material-symbols-outlined text-[16px]">storefront</span></a><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2.5 rounded-lg transition-colors font-medium flex items-center justify-between" href="custom_branding.html"><span>Custom Branding</span><span class="material-symbols-outlined text-[16px]">corporate_fare</span></a><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2.5 rounded-lg transition-colors font-medium flex items-center justify-between nav-active" href="warranty.html"><span>Warranty</span><span class="material-symbols-outlined text-[16px]">verified_user</span></a><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2.5 rounded-lg transition-colors font-medium flex items-center justify-between" href="contact.html"><span>Contact</span><span class="material-symbols-outlined text-[16px]">mail</span></a></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Section 1: Warranty Hero -->
+<section class="relative w-full bg-surface-container-low py-24 px-6 lg:px-12 overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<span class="text-xs font-label uppercase tracking-widest text-primary">Archival Assurance</span>
+<div class="w-12 h-[1px] bg-outline-variant/30"></div>
+</div>
+<h1 class="font-headline text-4xl lg:text-6xl font-bold tracking-tight text-on-surface leading-tight">
+          The Aurumbrella Lifetime Craftsmanship Guarantee.
+        </h1>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed max-w-2xl">
+          Every Aurumbrella is engineered as an heirloom piece. We stand behind our meticulous construction with an unconditional lifetime guarantee against structural and mechanical failure.
+        </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<a class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 rounded-lg font-medium text-sm shadow-md hover:opacity-95 transition-all" href="#register">
+            Register Your Piece
+          </a>
+<a class="bg-surface-container-high text-primary px-8 py-4 rounded-lg font-medium text-sm hover:bg-surface-dim transition-all" href="#claims">
+            Initiate Claim
+          </a>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="w-full h-[450px] rounded-xl bg-cover bg-center shadow-xl overflow-hidden" data-alt="A detailed close-up photography of a master craftsman inspecting the hand-stitched titanium ribs and waterproof canopy fabric of a luxury black umbrella under warm atelier lighting. Editorial style, high contrast, elegant tones of deep navy and charcoal." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMawW8paxgQ2opf5Ge-W8qFwqOgTcAL3A97HgNKhf558JY_-c2C6MOViiXVhxhe0oZPFahz9YftMKMZHlYNjnIlJ7vaN-3M3V6qL5-MH9BWvFkYN5_ubsgqBnpc88UIfmMslFl3hMOggIRicBU-UGzS5WZ8n1Kf9X5KuvVqM-eOz4GTFQC0GRLbGR10ByksJNHcmJ4VdSqlCSWVKrOK2J27Q3lRYIu_WKJHpCC9-U7miuFLGJ-dfWM')"></div>
+<div class="absolute -bottom-6 -left-6 bg-surface-container-lowest p-6 rounded-xl shadow-xl max-w-xs">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary text-2xl">verified</span>
+<span class="font-headline font-bold text-on-surface">Serial Tracked</span>
+</div>
+<p class="text-xs text-on-surface-variant">Each umbrella features an engraved brass serial marker registered securely to your profile.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Coverage Details -->
+<section class="w-full py-28 px-6 lg:px-12 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="max-w-3xl mb-16">
+<span class="text-xs font-label uppercase tracking-widest text-primary mb-3 block">Comprehensive Protection</span>
+<h2 class="font-headline text-3xl lg:text-5xl font-bold text-on-surface mb-6">What Our Lifetime Warranty Entails</h2>
+<p class="text-on-surface-variant text-base lg:text-lg">Our commitment is absolute. If your umbrella fails under normal usage due to a defect in materials or craftsmanship, we repair or replace it indefinitely.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-between hover:bg-surface-container transition-all">
+<div>
+<div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-2xl">settings_b_roll</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-3">Frame & Rib Integrity</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Complete structural coverage for aerospace-grade carbon fiber shafts, fiberglass ribs, and machined brass joints against wind inversion or breakage.</p>
+</div>
+<div class="mt-8 pt-4 border-t border-outline-variant/10 text-xs font-label text-primary uppercase tracking-wider">Fully Covered</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-between hover:bg-surface-container transition-all">
+<div>
+<div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-2xl">autorenew</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-3">Mechanism Failure</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Automatic open/close button assemblies, spring tensions, and locking notches are guaranteed to operate smoothly for the life of the product.</p>
+</div>
+<div class="mt-8 pt-4 border-t border-outline-variant/10 text-xs font-label text-primary uppercase tracking-wider">Fully Covered</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-between hover:bg-surface-container transition-all">
+<div>
+<div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-2xl">water_drop</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-3">Canopy & Stitching</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Seam reinforcement, waterproof membrane bonding, and handle leather bindings are fully maintained by our specialized atelier repair team.</p>
+</div>
+<div class="mt-8 pt-4 border-t border-outline-variant/10 text-xs font-label text-primary uppercase tracking-wider">Fully Covered</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Warranty Registration Form -->
+<section class="w-full py-28 px-6 lg:px-12 bg-surface-container-lowest" id="register">
+<div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-5 flex flex-col gap-6">
+<span class="text-xs font-label uppercase tracking-widest text-primary">Ownership Portal</span>
+<h2 class="font-headline text-3xl lg:text-4xl font-bold text-on-surface">Register Your Aurumbrella</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+          Activate your lifetime guarantee by entering your unique serial number found etched on the handle badge or printed on the original receipt.
+        </p>
+<div class="flex flex-col gap-4 pt-2">
+<div class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span>Instant digital certificate generation</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span>Priority concierge repair routing</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span>Archival notifications for limited editions</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 bg-surface-container-low p-8 lg:p-12 rounded-xl shadow-sm">
+<form class="flex flex-col gap-6" onsubmit="event.preventDefault(); alert('Warranty registered successfully!');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant">First Name</label>
+<input class="bg-surface-container-lowest px-4 py-3 text-sm rounded-lg outline-none focus:ring-1 focus:ring-primary text-on-surface" placeholder="Eleanor" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant">Last Name</label>
+<input class="bg-surface-container-lowest px-4 py-3 text-sm rounded-lg outline-none focus:ring-1 focus:ring-primary text-on-surface" placeholder="Vance" required="" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant">Email Address</label>
+<input class="bg-surface-container-lowest px-4 py-3 text-sm rounded-lg outline-none focus:ring-1 focus:ring-primary text-on-surface" placeholder="eleanor@example.com" required="" type="email"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant">Serial Number</label>
+<input class="bg-surface-container-lowest px-4 py-3 text-sm rounded-lg outline-none focus:ring-1 focus:ring-primary text-on-surface font-mono" placeholder="AUR-2026-8842" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant">Purchase Date & Location</label>
+<input class="bg-surface-container-lowest px-4 py-3 text-sm rounded-lg outline-none focus:ring-1 focus:ring-primary text-on-surface" placeholder="October 2026 / Flagship Boutique" type="text"/>
+</div>
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary py-4 rounded-lg font-medium text-sm shadow-md hover:opacity-95 transition-all mt-2" type="submit">
+            Complete Registration
+          </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Section 4: Repair & Maintenance Guide -->
+<section class="w-full py-28 px-6 lg:px-12 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="max-w-3xl mb-16">
+<span class="text-xs font-label uppercase tracking-widest text-primary mb-3 block">Atelier Expertise</span>
+<h2 class="font-headline text-3xl lg:text-5xl font-bold text-on-surface mb-6">Care & Maintenance Protocol</h2>
+<p class="text-on-surface-variant text-base lg:text-lg">Extend the pristine condition of your canopy and hardware through proper seasonal maintenance.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4">
+<span class="text-primary font-mono text-xl font-bold">01</span>
+<h3 class="font-headline text-lg font-bold text-on-surface">Drying Protocol</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Always leave your umbrella open in a well-ventilated area until completely dry before storing in its sleeve to prevent fabric degradation.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4">
+<span class="text-primary font-mono text-xl font-bold">02</span>
+<h3 class="font-headline text-lg font-bold text-on-surface">Coating Revival</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Restore water-repellency every two years with a gentle application of low-heat hairdryer treatment on the exterior canopy surface.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4">
+<span class="text-primary font-mono text-xl font-bold">03</span>
+<h3 class="font-headline text-lg font-bold text-on-surface">Handle Nourishment</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">For wooden handles, apply natural beeswax balm annually to preserve grain richness and prevent natural weathering cracks.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4">
+<span class="text-primary font-mono text-xl font-bold">04</span>
+<h3 class="font-headline text-lg font-bold text-on-surface">Professional Tuning</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Never force a stuck latch. Send your piece to our atelier for complimentary tension recalibration whenever needed.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Support & Claim Initiation -->
+<section class="w-full py-28 px-6 lg:px-12 bg-surface-container-low" id="claims">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-6 flex flex-col gap-6">
+<span class="text-xs font-label uppercase tracking-widest text-primary">Concierge Service</span>
+<h2 class="font-headline text-3xl lg:text-5xl font-bold text-on-surface">Initiating a Repair Claim</h2>
+<p class="text-on-surface-variant text-base leading-relaxed">
+          We make restoring your Aurumbrella effortless. Enjoy our white-glove pickup and return service anywhere in the world.
+        </p>
+<div class="flex flex-col gap-6 mt-4">
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm shrink-0">1</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Submit Claim Details</h4>
+<p class="text-xs text-on-surface-variant mt-1">Provide your serial number and a brief description of the required repair.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm shrink-0">2</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Complimentary Courier Pickup</h4>
+<p class="text-xs text-on-surface-variant mt-1">Our courier delivers a custom protective shipping tube directly to your door.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm shrink-0">3</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Atelier Restoration & Return</h4>
+<p class="text-xs text-on-surface-variant mt-1">Master artisans repair your piece within 5 business days and return it insured.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-6 bg-surface-container-lowest p-8 lg:p-12 rounded-xl shadow-sm">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-6">Start Your Claim</h3>
+<form class="flex flex-col gap-5" onsubmit="event.preventDefault(); alert('Claim submitted successfully! Our concierge will contact you.');">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant">Registered Serial Number</label>
+<input class="bg-surface-container-low px-4 py-3 text-sm rounded-lg outline-none focus:ring-1 focus:ring-primary text-on-surface font-mono" placeholder="AUR-2026-XXXX" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant">Nature of Repair</label>
+<select class="bg-surface-container-low px-4 py-3 text-sm rounded-lg outline-none focus:ring-1 focus:ring-primary text-on-surface">
+<option>Frame or Rib Damage</option>
+<option>Mechanism / Button Failure</option>
+<option>Canopy Tear or Seam Issue</option>
+<option>Handle / Leather Maintenance</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant">Detailed Description</label>
+<textarea class="bg-surface-container-low p-4 text-sm rounded-lg outline-none focus:ring-1 focus:ring-primary text-on-surface resize-none" placeholder="Please describe how the issue occurred..." rows="4"></textarea>
+</div>
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary py-4 rounded-lg font-medium text-sm shadow-md hover:opacity-95 transition-all" type="submit">
+            Dispatch Concierge Pickup
+          </button>
+</form>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-low py-16"><div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"><div class="flex flex-col gap-4"><a href="index.html" class="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"><img alt="Umbrella & Rain Gear Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_l90_g-5NBBHuX1wAmJWFD96CK9s8P2G13e4XaKImvRzAwmhW-ILXrGfUCZgMuUu-nsHgpDvBC5gqT49NDSmQl9LonRQczRxLbR3WGgovoWr4o7ui23z5hYVQgOC_GUv4YGOkh8kvXsFJlXLiEcUmVOFRlD8q8Dhs9p35AEeybXeNajClhcSQnHxZOlWjOvaWzRysfntUx5XtGENTLXtCOn6JYa9CvfYNDc7Zd_iaByrc3OJ3fg2n"/><span class="text-xl font-headline font-bold tracking-tight text-on-surface">Aurumbrella</span></a><p class="text-sm text-on-surface-variant">High-end editorial rain gear and specialty umbrellas crafted for the discerning individual.</p></div><div><h4 class="font-headline font-bold text-on-surface mb-4">Quick Links</h4><ul class="flex flex-col gap-2 text-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" href="#">Our Heritage</a></li><li><a class="hover:text-primary transition-colors" href="#">Care Guide</a></li><li><a class="hover:text-primary transition-colors" href="#">Store Locator</a></li><li><a class="hover:text-primary transition-colors" href="#">Sustainability</a></li></ul></div><div><h4 class="font-headline font-bold text-on-surface mb-4">Newsletter</h4><p class="text-sm text-on-surface-variant mb-4">Subscribe to receive seasonal lookbooks and archival releases.</p><div class="flex"><input class="bg-surface-container-lowest px-4 py-2 text-sm w-full outline-none focus:ring-1 focus:ring-primary" placeholder="Your email" type="email"/><button class="bg-primary text-on-primary px-4 py-2 text-sm font-medium">Join</button></div></div><div><h4 class="font-headline font-bold text-on-surface mb-4">Contact</h4><p class="text-sm text-on-surface-variant mb-2">Concierge Services</p><p class="text-sm text-on-surface-variant">support@aurumbrella.com</p></div></div><div class="max-w-7xl mx-auto px-6 lg:px-12 mt-12 pt-8 border-t border-outline-variant/15 text-center text-on-surface-variant text-sm">© 2026 Aurumbrella. All rights reserved.</div></footer>
+<script>
+// State management script
+document.addEventListener('DOMContentLoaded', () => {
+    // Navigation active state
+    let currentPage = window.location.pathname.split('/').pop() || 'warranty.html';
+    if (currentPage === '' || currentPage === 'stormshield') currentPage = 'index.html';
+    
+    document.querySelectorAll('.nav-link, .nav-link-mobile').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+            link.classList.add('nav-active');
+            link.classList.remove('text-on-surface-variant', 'text-slate-700');
+            
+            const dropdownBtn = link.closest('.group')?.querySelector('.nav-dropdown-btn');
+            if (dropdownBtn) {
+                dropdownBtn.classList.add('nav-active');
+                dropdownBtn.classList.remove('text-on-surface-variant');
+            }
+        } else {
+            link.classList.remove('nav-active');
+        }
+    });
+
+    // Mobile Hamburger Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+    const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+    if (mobileMenuBtn && mobileMenuDrawer) {
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenuDrawer.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenuDrawer.classList.remove('hidden');
+                if (mobileMenuIcon) mobileMenuIcon.textContent = 'close';
+            } else {
+                mobileMenuDrawer.classList.add('hidden');
+                if (mobileMenuIcon) mobileMenuIcon.textContent = 'menu';
+            }
+        });
+    }
+
+    // Brand name click
+    const brandElement = document.querySelector('header h1, header .brand, header img[alt*="logo" i]');
+    if (brandElement) {
+        brandElement.style.cursor = 'pointer';
+        brandElement.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    }
+
+    // Dark/Light mode and RTL/LTR persistence
+    const themeButton = [...document.querySelectorAll('button')].find(b => b.textContent.includes('dark_mode') || b.textContent.includes('light_mode'));
+    const rtlButton = [...document.querySelectorAll('button')].find(b => b.textContent.includes('swap_horiz') || b.textContent.includes('LTR') || b.textContent.includes('RTL'));
+    
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+    } else if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+    }
+
+    const savedDir = localStorage.getItem('dir');
+    if (savedDir === 'rtl') {
+        document.documentElement.setAttribute('dir', 'rtl');
+    } else if (savedDir === 'ltr') {
+        document.documentElement.setAttribute('dir', 'ltr');
+    }
+
+    if (themeButton) {
+        const newThemeBtn = themeButton.cloneNode(true);
+        themeButton.parentNode.replaceChild(newThemeBtn, themeButton);
+        
+        const iconSpan = newThemeBtn.querySelector('span');
+        if (iconSpan) {
+            iconSpan.textContent = document.documentElement.classList.contains('dark') ? 'light_mode' : 'dark_mode';
+        }
+
+        newThemeBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            
+            if (isDark) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+            
+            if (iconSpan) {
+                iconSpan.textContent = isDark ? 'light_mode' : 'dark_mode';
+            }
+        });
+    }
+
+    if (rtlButton) {
+        const newRtlBtn = rtlButton.cloneNode(true);
+        rtlButton.parentNode.replaceChild(newRtlBtn, rtlButton);
+        newRtlBtn.addEventListener('click', () => {
+            const currentDir = document.documentElement.getAttribute('dir');
+            if (currentDir === 'rtl') {
+                document.documentElement.setAttribute('dir', 'ltr');
+                localStorage.setItem('dir', 'ltr');
+            } else {
+                document.documentElement.setAttribute('dir', 'rtl');
+                localStorage.setItem('dir', 'rtl');
+            }
+        });
+    }
+
+    // Remove empty spaces
+    document.querySelectorAll('section, div.container').forEach(el => {
+        if (el.innerHTML.trim() === '' || el.children.length === 0) {
+            el.style.display = 'none';
+        }
+    });
+});
+</script>
+<style>
+/* Prevent horizontal overflow on mobile/tablet */
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+/* High Contrast Navigation Active State */
+.nav-link.nav-active, .nav-dropdown-btn.nav-active, .nav-link-mobile.nav-active {
+    color: #094cb2 !important;
+    background-color: #e0edff !important;
+    font-weight: 700 !important;
+}
+.dark .nav-link.nav-active, .dark .nav-dropdown-btn.nav-active, .dark .nav-link-mobile.nav-active {
+    color: #38bdf8 !important;
+    background-color: rgba(56, 189, 248, 0.18) !important;
+    font-weight: 700 !important;
+}
+
+/* Home Dropdown High Contrast Styles */
+.nav-dropdown-btn {
+    color: #334155 !important;
+    font-weight: 500;
+}
+.dark .nav-dropdown-btn {
+    color: #f1f5f9 !important;
+    font-weight: 500;
+}
+.nav-dropdown-btn:hover:not(.nav-active) {
+    color: #094cb2 !important;
+    background-color: #f1f5f9 !important;
+}
+.dark .nav-dropdown-btn:hover:not(.nav-active) {
+    color: #38bdf8 !important;
+    background-color: #1e293b !important;
+}
+.nav-dropdown-btn.nav-active {
+    color: #094cb2 !important;
+    background-color: #e0edff !important;
+    font-weight: 700 !important;
+    border: 1px solid #bfdbfe !important;
+}
+.dark .nav-dropdown-btn.nav-active {
+    color: #38bdf8 !important;
+    background-color: rgba(56, 189, 248, 0.2) !important;
+    font-weight: 700 !important;
+    border: 1px solid rgba(56, 189, 248, 0.35) !important;
+}
+
+.nav-dropdown-menu {
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08) !important;
+}
+.dark .nav-dropdown-menu {
+    background-color: #1e293b !important;
+    border: 1px solid #475569 !important;
+    box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.6) !important;
+}
+.nav-dropdown-menu a.nav-link {
+    color: #0f172a !important;
+    font-weight: 600 !important;
+    transition: all 0.15s ease-in-out !important;
+}
+.dark .nav-dropdown-menu a.nav-link {
+    color: #f8fafc !important;
+    font-weight: 600 !important;
+}
+.nav-dropdown-menu a.nav-link:hover:not(.nav-active) {
+    background-color: #eff6ff !important;
+    color: #094cb2 !important;
+    font-weight: 700 !important;
+}
+.dark .nav-dropdown-menu a.nav-link:hover:not(.nav-active) {
+    background-color: #334155 !important;
+    color: #38bdf8 !important;
+    font-weight: 700 !important;
+}
+.nav-dropdown-menu a.nav-link.nav-active {
+    background-color: #094cb2 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 6px rgba(9, 76, 178, 0.25) !important;
+}
+.dark .nav-dropdown-menu a.nav-link.nav-active {
+    background-color: #0284c7 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4) !important;
+}
+.nav-dropdown-menu a.nav-link.nav-active:hover {
+    background-color: #073b8a !important;
+    color: #ffffff !important;
+}
+.dark .nav-dropdown-menu a.nav-link.nav-active:hover {
+    background-color: #0369a1 !important;
+    color: #ffffff !important;
+}
+
+/* 7. Ensure text is visible in dark mode */
+.dark body {
+    background-color: #0f172a !important;
+    color: #f8fafc !important;
+}
+
+/* Base surface overrides */
+.dark .bg-surface {
+    background-color: #0f172a !important; /* Matches body */
+}
+.dark .bg-surface-container-lowest,
+.dark .bg-surface-container-low {
+    background-color: #1e293b !important; /* Slightly elevated */
+    border: 1px solid #334155 !important;
+}
+.dark .bg-surface-container,
+.dark .bg-surface-container-high,
+.dark .bg-surface-container-highest {
+    background-color: #334155 !important; /* Highest elevation */
+    border: 1px solid #475569 !important;
+}
+
+/* Make sure text color is correct for all surface types */
+.dark [class*="bg-surface"] {
+    color: #f8fafc !important;
+}
+
+/* Header */
+.dark header[class*="bg-surface"] {
+    background-color: rgba(15, 23, 42, 0.85) !important;
+    border-bottom: 1px solid #1e293b !important;
+}
+
+/* Text overrides */
+.dark [class*="text-on-surface"] {
+    color: #f1f5f9 !important;
+}
+.dark .text-primary {
+    color: #38bdf8 !important;
+}
+.dark .text-tertiary {
+    color: #facc15 !important;
+}
+.dark .bg-primary-container, .dark .bg-primary-container\/20 {
+    background-color: rgba(56, 189, 248, 0.15) !important;
+}
+.dark .bg-primary {
+    background-color: #0284c7 !important;
+}
+.dark [class*="from-primary"] {
+    background-image: linear-gradient(to right, #0369a1, #0284c7) !important;
+}
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6, .dark p, .dark a {
+    color: inherit;
+}
+.dark .bg-white {
+    background-color: #1e293b !important;
+}
+.dark [class*="text-gray-"] {
+    color: #e2e8f0 !important;
+}
+.dark span.material-symbols-outlined {
+    color: inherit !important;
+}
+
+/* Footer specific fixes */
+.dark footer input, .dark footer textarea {
+    background-color: #0f172a !important;
+    border: 1px solid #334155 !important;
+    color: #f8fafc !important;
+}
+.dark footer [class*="bg-surface-container"] {
+    background-color: #0f172a !important; 
+}
+
+/* 3. Remove unwanted empty space */
+section:empty {
+    display: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+</style>
+
+</body></html>

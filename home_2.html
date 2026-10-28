@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {"colors": {"on-secondary": "#ffffff", "on-tertiary-fixed-variant": "#524600", "surface-container-highest": "#e3e2e3", "on-background": "#1b1c1d", "primary-fixed-dim": "#b1c5ff", "on-tertiary": "#ffffff", "inverse-surface": "#303031", "primary": "#094cb2", "tertiary-fixed-dim": "#dcc661", "on-error-container": "#93000a", "secondary": "#5a5f63", "outline": "#737784", "surface-container": "#efedee", "inverse-on-surface": "#f2f0f1", "primary-fixed": "#d9e2ff", "on-secondary-container": "#606569", "surface": "#faf9fa", "surface-variant": "#e3e2e3", "outline-variant": "#c3c6d5", "on-surface": "#1b1c1d", "surface-container-low": "#f5f3f4", "on-surface-variant": "#434653", "error": "#ba1a1a", "on-primary-fixed": "#001946", "surface-tint": "#2259bf", "inverse-primary": "#b1c5ff", "surface-container-high": "#e9e8e9", "background": "#faf9fa", "on-primary-container": "#e7ebff", "surface-container-lowest": "#ffffff", "secondary-container": "#dfe3e8", "primary-container": "#3366cc", "on-secondary-fixed": "#171c20", "secondary-fixed-dim": "#c2c7cc", "on-tertiary-container": "#4a3f00", "tertiary-fixed": "#f9e37a", "on-primary": "#ffffff", "surface-dim": "#dbdadb", "on-tertiary-fixed": "#211b00", "secondary-fixed": "#dfe3e8", "error-container": "#ffdad6", "surface-bright": "#faf9fa", "on-primary-fixed-variant": "#00419d", "tertiary": "#6d5e00", "on-error": "#ffffff", "tertiary-container": "#bfab49", "on-secondary-fixed-variant": "#42474b"}, "borderRadius": {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"}, "fontFamily": {"headline": ["Noto Serif"], "display": ["Noto Serif"], "body": ["Inter"], "label": ["Public Sans"]}}}};</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Serif:wght@100..900&family=Public+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+
+<style>
+/* Remove ALL large gaps among all pages */
+main section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+}
+main {
+    padding-top: 5rem !important;
+}
+
+/* Responsive Header Navigation: mobile (<700px) vs tablet/desktop (>=700px) */
+@media (max-width: 699px) {
+    .header-nav {
+        display: none !important;
+    }
+    .header-mobile-toggle {
+        display: flex !important;
+    }
+}
+@media (min-width: 700px) {
+    .header-nav {
+        display: flex !important;
+    }
+    .header-mobile-toggle {
+        display: none !important;
+    }
+    #mobile-menu-drawer {
+        display: none !important;
+    }
+}
+</style>
+
+<link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/aida-public/AB6AXuD_l90_g-5NBBHuX1wAmJWFD96CK9s8P2G13e4XaKImvRzAwmhW-ILXrGfUCZgMuUu-nsHgpDvBC5gqT49NDSmQl9LonRQczRxLbR3WGgovoWr4o7ui23z5hYVQgOC_GUv4YGOkh8kvXsFJlXLiEcUmVOFRlD8q8Dhs9p35AEeybXeNajClhcSQnHxZOlWjOvaWzRysfntUx5XtGENTLXtCOn6JYa9CvfYNDc7Zd_iaByrc3OJ3fg2n"/>
+<title>Aurumbrella | Home 2</title>
+</head><body class="bg-surface font-body text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-slate-200/60 dark:border-slate-800 shadow-[0_1px_8px_rgba(0,0,0,0.04)] transition-colors"><div class="h-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between"><a href="index.html" class="flex items-center gap-2 sm:gap-3 cursor-pointer hover:opacity-85 transition-opacity shrink-0"><img alt="Umbrella & Rain Gear Logo" class="h-7 sm:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_l90_g-5NBBHuX1wAmJWFD96CK9s8P2G13e4XaKImvRzAwmhW-ILXrGfUCZgMuUu-nsHgpDvBC5gqT49NDSmQl9LonRQczRxLbR3WGgovoWr4o7ui23z5hYVQgOC_GUv4YGOkh8kvXsFJlXLiEcUmVOFRlD8q8Dhs9p35AEeybXeNajClhcSQnHxZOlWjOvaWzRysfntUx5XtGENTLXtCOn6JYa9CvfYNDc7Zd_iaByrc3OJ3fg2n"/><span class="text-lg sm:text-xl font-headline font-bold tracking-tight text-on-surface whitespace-nowrap">Aurumbrella</span></a><nav class="header-nav hidden sm:flex items-center gap-1 md:gap-1.5 lg:gap-5 xl:gap-6 relative">
+  <div class="relative group">
+    <button class="nav-dropdown-btn text-xs lg:text-sm text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-0.5 md:gap-1 px-2 py-1 md:px-2.5 lg:px-3 rounded-lg whitespace-nowrap" aria-haspopup="true"><span>Home</span> <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">expand_more</span></button>
+    <div class="nav-dropdown-menu absolute left-0 top-full mt-1 w-36 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200/80 dark:border-slate-700/80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex flex-col p-2 z-50">
+      <a class="nav-link text-sm text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-700/60 px-3 py-2 rounded-lg transition-colors font-medium" href="index.html">Home 1</a>
+      <a class="nav-link text-sm text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-700/60 px-3 py-2 rounded-lg transition-colors font-medium" href="home_2.html">Home 2</a>
+    </div>
+  </div>
+  <a class="nav-link text-xs lg:text-sm text-on-surface-variant hover:text-on-surface transition-colors px-2 py-1 md:px-2.5 lg:px-3 rounded-lg whitespace-nowrap" href="products.html">Products</a>
+  <a class="nav-link text-xs lg:text-sm text-on-surface-variant hover:text-on-surface transition-colors px-2 py-1 md:px-2.5 lg:px-3 rounded-lg whitespace-nowrap" href="custom_branding.html">Custom Branding</a>
+  <a class="nav-link text-xs lg:text-sm text-on-surface-variant hover:text-on-surface transition-colors px-2 py-1 md:px-2.5 lg:px-3 rounded-lg whitespace-nowrap" href="warranty.html">Warranty</a>
+  <a class="nav-link text-xs lg:text-sm text-on-surface-variant hover:text-on-surface transition-colors px-2 py-1 md:px-2.5 lg:px-3 rounded-lg whitespace-nowrap" href="contact.html">Contact</a>
+</nav><div class="flex items-center gap-1 sm:gap-2 lg:gap-4 shrink-0"><button class="text-on-surface-variant hover:text-on-surface p-1.5 sm:p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Dark/Light Mode"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button><button class="text-on-surface-variant hover:text-on-surface p-1.5 sm:p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle RTL/LTR"><span class="material-symbols-outlined text-[20px]">swap_horiz</span></button><a href="products.html" class="text-on-surface-variant hover:text-on-surface cursor-pointer p-1.5 sm:p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors inline-flex items-center" title="Go to Products"><span class="material-symbols-outlined text-[20px]">shopping_bag</span></a><button id="mobile-menu-btn" class="header-mobile-toggle sm:hidden p-1.5 sm:p-2 text-on-surface-variant hover:text-on-surface hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors flex items-center justify-center shrink-0" aria-label="Toggle Navigation Menu"><span class="material-symbols-outlined text-[24px]" id="mobile-menu-icon">menu</span></button></div></div><div id="mobile-menu-drawer" class="sm:hidden hidden border-t border-slate-200/80 dark:border-slate-800 bg-surface/98 dark:bg-slate-900/98 backdrop-blur-2xl px-6 py-5 shadow-2xl transition-all"><div class="flex flex-col gap-2"><div class="py-1"><span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 px-3">Home Editions</span><div class="mt-1 flex flex-col gap-1 pl-2"><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2 rounded-lg transition-colors flex items-center justify-between" href="index.html"><span>Home 1 (Signature)</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2 rounded-lg transition-colors flex items-center justify-between" href="home_2.html"><span>Home 2 (Editorial)</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a></div></div><div class="h-px bg-slate-200/80 dark:bg-slate-800 my-1"></div><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2.5 rounded-lg transition-colors font-medium flex items-center justify-between" href="products.html"><span>Products</span><span class="material-symbols-outlined text-[16px]">storefront</span></a><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2.5 rounded-lg transition-colors font-medium flex items-center justify-between" href="custom_branding.html"><span>Custom Branding</span><span class="material-symbols-outlined text-[16px]">corporate_fare</span></a><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2.5 rounded-lg transition-colors font-medium flex items-center justify-between" href="warranty.html"><span>Warranty</span><span class="material-symbols-outlined text-[16px]">verified_user</span></a><a class="nav-link-mobile text-sm text-on-surface-variant hover:text-primary dark:hover:text-sky-400 px-3 py-2.5 rounded-lg transition-colors font-medium flex items-center justify-between" href="contact.html"><span>Contact</span><span class="material-symbols-outlined text-[16px]">mail</span></a></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- 1. Hero Section -->
+<section class="relative  flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 opacity-40 pointer-events-none">
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-8">
+<span class="text-xs font-label uppercase tracking-[0.25em] text-tertiary">Archival Edition No. 04</span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tight text-on-surface leading-[1.1]">
+        Defying the Elements with Elegance
+      </h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
+        Mastering the intersection of structural engineering and haute couture rainwear. Crafted for those who refuse to compromise poise under pressure.
+      </p>
+<div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+<a class="bg-gradient-to-r from-primary to-primary-container text-on-primary font-label text-sm font-semibold px-8 py-4 rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform" href="#products">
+          Explore Collection
+        </a>
+<a class="bg-surface-container-high text-primary font-label text-sm font-semibold px-8 py-4 rounded-xl hover:bg-surface-container-highest transition-colors" href="#atelier">
+          The Atelier Process
+        </a>
+</div>
+</div>
+</section>
+<!-- 2. Category Spotlight -->
+<section class="py-28 px-6 lg:px-12 bg-surface-container-low" id="products">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<span class="text-xs font-label uppercase tracking-[0.2em] text-primary">Curated Categories</span>
+<h2 class="font-headline text-3xl md:text-5xl font-bold text-on-surface mt-2">Designed for the Deluge</h2>
+</div>
+<p class="text-on-surface-variant max-w-md text-sm leading-relaxed">
+          Each piece undergoes rigorous wind-tunnel testing and waterproofing metrics to ensure pristine performance in any climate.
+        </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-transform duration-500 hover:-translate-y-1">
+<div class="h-96 w-full bg-cover bg-center overflow-hidden" data-alt="A luxurious black stormproof canopy umbrella open against a moody slate background, showcasing carbon fiber ribs and ergonomic wooden handle." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCySht7O5R5qXbOsHuT6ErYYKdHu_mdACaAUtUaxIEoW-WMlsOgB-y2V_aOJ1vYOUyK2mCVSY7-pPuVgfoinMOmJjwinNwGgX0nkZOshz6tgteg6CBxos45BsG8ftAf-jET331PfuI5BR9b2iR1-pc6wHobszr-XwA7LJrZ5_EbNGY6tmrwR326fajIHDli-Kb_aBIQ9o8wGrJ3f9Lj6H9gK7--X4OCEEOMSk9Snci7CSXvT3fEP9m6')">
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-8 flex flex-col flex-grow justify-between">
+<div>
+<span class="text-xs font-label text-tertiary tracking-widest uppercase">01 / Shield</span>
+<h3 class="font-headline text-2xl font-bold text-on-surface mt-2 mb-3">Stormproof Canopies</h3>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed">Wind-tunnel certified up to 95mph, featuring aerodynamically vented dual-canopy technology.</p>
+</div>
+<a class="inline-flex items-center gap-2 text-sm font-label font-semibold text-primary mt-6 group-hover:translate-x-1 transition-transform" href="#">
+              Discover Canopies <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-transform duration-500 hover:-translate-y-1 lg:-mt-6">
+<div class="h-96 w-full bg-cover bg-center overflow-hidden" data-alt="A tailored trench-ready rain coat in deep navy blue hanging on a minimal brass hook, water droplets gleaming on the treated gabardine fabric." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMoANmgYMRwC-Ul-5n343a1S2y_UZkMIi35YUKK1IujhMcQJAqnA-LXBP3Vtk_qcVPiFGF8mB82ukmgZ2ESIGc-gXpgr8vjl4BvnCG2lg6qNu8xSTYAYBvzh_PWO3KCLomySJRwU2MAI3VOPwFL1MhdXkcuNgzGHjhg4-67nYc0CT-VI_xK176w7MqqWpW8CYTJxMW-b2pmSBjx_A22q4XSxXVlG6yXfKcIBYW54wtGKrUnEsQFjcN')">
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-8 flex flex-col flex-grow justify-between">
+<div>
+<span class="text-xs font-label text-tertiary tracking-widest uppercase">02 / Apparels</span>
+<h3 class="font-headline text-2xl font-bold text-on-surface mt-2 mb-3">Trench-Ready Raincoats</h3>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed">Japanese technical gabardine woven with hydrophobic threads for seamless rain shedding.</p>
+</div>
+<a class="inline-flex items-center gap-2 text-sm font-label font-semibold text-primary mt-6 group-hover:translate-x-1 transition-transform" href="#">
+              Explore Coats <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-transform duration-500 hover:-translate-y-1">
+<div class="h-96 w-full bg-cover bg-center overflow-hidden" data-alt="Handcrafted waterproof full-grain leather attaché case and folio resting on dark slate with water beads resting safely on the surface." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBkd0npMG8xlUhk0qWezAnKa5xgzrRsymQZ_BKa1Mla_n1aA79K3eetAm7TFdFzDz8dEz8hc5NSQnV0kujiMHimsD9W_VDHWybqY234qDdi9e11Tmy4l2Kx7fysKYrciujx8ClmGThN__WQ2AUj0JWof0AodEo_fX7lcx1GHhoxyWsQYYbDhvSSfJnpV5Y9aZ6Bj4y9Pavh2HaotuJ85x6tk94otH1Mx_mHsY7KuKJ7SzGXjTdVuG0M')">
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-8 flex flex-col flex-grow justify-between">
+<div>
+<span class="text-xs font-label text-tertiary tracking-widest uppercase">03 / Carry</span>
+<h3 class="font-headline text-2xl font-bold text-on-surface mt-2 mb-3">Waterproof Leather Goods</h3>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed">Full-grain vegetable-tanned leather treated internally with natural beeswax infusions.</p>
+</div>
+<a class="inline-flex items-center gap-2 text-sm font-label font-semibold text-primary mt-6 group-hover:translate-x-1 transition-transform" href="#">
+              View Leather <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. The Atelier Process -->
+<section class="py-28 px-6 lg:px-12 bg-surface" id="atelier">
+<div class="max-w-7xl mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-20">
+<span class="text-xs font-label uppercase tracking-[0.2em] text-primary">Artisanal Integrity</span>
+<h2 class="font-headline text-3xl md:text-5xl font-bold text-on-surface mt-2">The Atelier Process</h2>
+<p class="text-on-surface-variant text-sm mt-4 font-light">From raw aerospace-grade carbon rods to hand-stitched waterproof seams, discover our 48-hour creation cycle.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="flex flex-col gap-4 p-6 bg-surface-container-low rounded-xl">
+<span class="font-headline text-4xl text-primary font-bold">01</span>
+<h3 class="font-headline font-bold text-lg text-on-surface">Frame Forging</h3>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed">Ribs are hand-selected from flexible carbon composite matrices to withstand violent torsional shifts.</p>
+</div>
+<div class="flex flex-col gap-4 p-6 bg-surface-container-low rounded-xl">
+<span class="font-headline text-4xl text-primary font-bold">02</span>
+<h3 class="font-headline font-bold text-lg text-on-surface">Canopy Tailoring</h3>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed">Dense 300-thread count silk-poly blend is laser-cut and double-stitched with sealed waterproof seams.</p>
+</div>
+<div class="flex flex-col gap-4 p-6 bg-surface-container-low rounded-xl">
+<span class="font-headline text-4xl text-primary font-bold">03</span>
+<h3 class="font-headline font-bold text-lg text-on-surface">Handle Carving</h3>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed">Solid chestnut and maple handles are lathe-turned, polished, and balanced for absolute ergonomic ease.</p>
+</div>
+<div class="flex flex-col gap-4 p-6 bg-surface-container-low rounded-xl">
+<span class="font-headline text-4xl text-primary font-bold">04</span>
+<h3 class="font-headline font-bold text-lg text-on-surface">Wind Testing</h3>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed">Every individual umbrella undergoes a rigorous high-velocity wind chamber stress test before boxing.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Seasonal Weather Guide & Recommendations -->
+<section class="py-28 px-6 lg:px-12 bg-surface-container-high">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col lg:flex-row gap-12 items-center">
+<div class="w-full lg:w-1/2 flex flex-col gap-6">
+<span class="text-xs font-label uppercase tracking-[0.2em] text-primary">Climate Selector</span>
+<h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface">Tailored for Your Environment</h2>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed">
+            Select your prevailing climate profile to receive bespoke gear combinations engineered to withstand your regional conditions.
+          </p>
+<div class="flex flex-col gap-3 mt-4" id="weather-tabs">
+<button class="weather-btn text-left p-4 rounded-xl bg-surface-container-lowest text-on-surface font-label text-sm font-semibold shadow-sm transition-all flex items-center justify-between" id="btn-monsoon" onclick="switchWeather('monsoon')">
+<span>Monsoon Deluge</span>
+<span class="material-symbols-outlined text-primary">water_drop</span>
+</button>
+<button class="weather-btn text-left p-4 rounded-xl bg-surface-container-low text-on-surface-variant font-label text-sm font-semibold transition-all flex items-center justify-between" id="btn-urban" onclick="switchWeather('urban')">
+<span>Urban Downpour</span>
+<span class="material-symbols-outlined text-outline">location_city</span>
+</button>
+<button class="weather-btn text-left p-4 rounded-xl bg-surface-container-low text-on-surface-variant font-label text-sm font-semibold transition-all flex items-center justify-between" id="btn-coastal" onclick="switchWeather('coastal')">
+<span>Coastal Gale</span>
+<span class="material-symbols-outlined text-outline">air</span>
+</button>
+</div>
+</div>
+<div class="w-full lg:w-1/2 bg-surface-container-lowest p-8 rounded-xl shadow-sm flex flex-col gap-6">
+<div class="flex flex-col gap-6" id="weather-content">
+<div class="h-64 w-full bg-cover bg-center rounded-lg" data-alt="Heavy tropical monsoon rain pouring over a city street while an Aurumbrella titanium canopy stands resolute." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcOndPMjjYh6jOm88cm81eaijFbP-nHESCwoflNHSskYgSkZZPIVRV-ukZn-8Gb0Cn90o5ceNSj3T-yMRdR9_P-JdjbvdKiQvxCwziTby1mntUyCzzxE5L2MoWi7a7vV5EXp6TsRjBU4ZqCFKqyCRrtUt5-y3ewnBVgJy8712mVHCywvGlnaa1tnXPvUuasyGaJCj8tHrQTU5zuT89QGqKNP3jLLhQFDc9oUTo-Oqx7HYD55lSSThN')"></div>
+<div>
+<span class="text-xs font-label text-tertiary tracking-widest uppercase">Monsoon Configuration</span>
+<h3 class="font-headline text-2xl font-bold text-on-surface mt-1 mb-2">The Tempest Series + Hydro-Shell Coat</h3>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed">Engineered with oversized double canopy vents to allow heavy air pressure release without inversion, paired with fully taped waterproof seams.</p>
+</div>
+<button class="bg-primary text-on-primary font-label text-xs font-semibold py-3 px-6 rounded-lg w-fit">
+              Secure This Configuration
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Journal & Editorial Stories -->
+<section class="py-28 px-6 lg:px-12 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<span class="text-xs font-label uppercase tracking-[0.2em] text-primary">The Journal</span>
+<h2 class="font-headline text-3xl md:text-5xl font-bold text-on-surface mt-2">Weathering the Elements</h2>
+</div>
+<a class="inline-flex items-center gap-2 text-sm font-label font-semibold text-primary" href="#">
+          View All Stories <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<article class="flex flex-col gap-4 group cursor-pointer">
+<div class="h-72 w-full bg-cover bg-center rounded-xl overflow-hidden" data-alt="A solitary figure in a stylish charcoal trench coat walking down a rainy cobblestone Parisian street at dusk." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFV4DDOfMLFQ28zmU-JsSAtV-GG5Hh0LCGm12e-YcwGZ0atWm5GhtMN6v2HFLl11SGtko2eHbEHeOJv117XYEd397sSWZHkfCADdYlMt2TKRZQsgWWgcjDSNaDp9synl0gGlFnxzFQ-LrE1KHE5OVZ_ACwxzGLjctyaHd63qRF6-bVWlQWT9qluGdsdVUyEHjfTHbHFQDjskjnP2h_N2tCQFKt0grTAK0dnTsceO1CDxLN8WQkNoSg')"></div>
+<span class="text-xs font-label text-on-surface-variant">October 14, 2026 • 4 min read</span>
+<h3 class="font-headline text-xl font-bold text-on-surface group-hover:text-primary transition-colors">The Architecture of Rain: Why We Build for the Storm</h3>
+<p class="text-sm text-on-surface-variant font-light line-clamp-2">An exploration into how traditional Japanese umbrella craftsmanship informed modern aerospace rib structures.</p>
+</article>
+<article class="flex flex-col gap-4 group cursor-pointer">
+<div class="h-72 w-full bg-cover bg-center rounded-xl overflow-hidden" data-alt="Close-up shot of water droplets beading perfectly on deep brown vegetable-tanned leather under warm atelier lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2SwRjdLlidplxVTpx71aool2j6M5EkV4r-HxjZh8BcfSgn0xZpiJwPiCkd-xn9RlP-Cs6569LHwJzqDt-0OQ7VvmCuO2ElKeYORAPOBndD5x9wKE6ge9atEhbi8DcfTYKPn0xC04Hj2YOQM3uBhBfEAwlAQB_YkM68Cn-G_l9WwCpf5vfmyoec_Hi2o994Z3wpK4MNRsK8x2XYZ6-L-nMUuvAC4zFYKGwayUJ14tSE-MWmOBEwi1X')"></div>
+<span class="text-xs font-label text-on-surface-variant">September 28, 2026 • 6 min read</span>
+<h3 class="font-headline text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Patina & Precipitation: Maintaining Leather in Wet Seasons</h3>
+<p class="text-sm text-on-surface-variant font-light line-clamp-2">How natural beeswax treatments protect full-grain hide while allowing it to age with distinguished character.</p>
+</article>
+<article class="flex flex-col gap-4 group cursor-pointer">
+<div class="h-72 w-full bg-cover bg-center rounded-xl overflow-hidden" data-alt="Minimalist architectural lines of a brutalist gallery building against an atmospheric grey overcast London sky." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgjSSlrm-Td5STUKbmKUWD1sDWNI7HWeQqT2MIaLKujX3BJWEF_OcgX2TaKmepBKlrVuJFZUN_rWsbCkVCe5QRdmDdCu_vZL3XA656ppNSHpwihRxDrgqQ64s1klCKF2z9onbzAi_0jmmVwovv_vH-jTEOvJKQhVcigI29cNPOu2UQeaKj_1kkrepHMRp_g0PQ3SpR4TpRGDjTAnGbZwo8c2G1e3jNuWtAqZxDcSyG842I3c0Y_5du')"></div>
+<span class="text-xs font-label text-on-surface-variant">September 12, 2026 • 5 min read</span>
+<h3 class="font-headline text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Sartorial Resilience in the Financial District</h3>
+<p class="text-sm text-on-surface-variant font-light line-clamp-2">Balancing formal tailoring with functional rainwear during sudden autumn squalls.</p>
+</article>
+</div>
+</div>
+</section>
+<script>
+    function switchWeather(type) {
+      const content = {
+        monsoon: {
+          title: "The Tempest Series + Hydro-Shell Coat",
+          desc: "Engineered with oversized double canopy vents to allow heavy air pressure release without inversion, paired with fully taped waterproof seams.",
+          image: "Heavy tropical monsoon rain pouring over a city street while an Aurumbrella titanium canopy stands resolute."
+        },
+        urban: {
+          title: "The Compact Metropolitan & Trench Coat",
+          desc: "Optimized for fast-paced city navigation. Lightweight telescopic carbon frame fits effortlessly into briefcases while offering supreme coverage.",
+          image: "A busy rainy Tokyo crosswalk viewed from above, with stylish pedestrians holding sleek black Aurumbrellas."
+        },
+        coastal: {
+          title: "The Mariner Storm Canopy & Waxed Jacket",
+          desc: "Built to combat salty maritime winds and relentless coastal downpours with heavy-duty corrosion-resistant brass hardware and reinforced ribs.",
+          image: "A dramatic rocky coastal shoreline beaten by crashing waves under heavy grey storm clouds, with an umbrella resting on a stone ledge."
+        }
+      };
+
+      document.querySelectorAll('.weather-btn').forEach(btn => {
+        btn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+        btn.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+        const icon = btn.querySelector('.material-symbols-outlined');
+        icon.classList.remove('text-primary');
+        icon.classList.add('text-outline');
+      });
+
+      const activeBtn = document.getElementById('btn-' + type);
+      activeBtn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+      activeBtn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+      const activeIcon = activeBtn.querySelector('.material-symbols-outlined');
+      activeIcon.classList.remove('text-outline');
+      activeIcon.classList.add('text-primary');
+
+      const data = content[type];
+      const container = document.getElementById('weather-content');
+      container.innerHTML = `
+        <div class="h-64 w-full bg-cover bg-center rounded-lg" style="background-image: url('placeholder')" data-alt="${data.image}"></div>
+        <div>
+          <span class="text-xs font-label text-tertiary tracking-widest uppercase">${type.charAt(0).toUpperCase() + type.slice(1)} Configuration</span>
+          <h3 class="font-headline text-2xl font-bold text-on-surface mt-1 mb-2">${data.title}</h3>
+          <p class="text-sm text-on-surface-variant font-light leading-relaxed">${data.desc}</p>
+        </div>
+        <button class="bg-primary text-on-primary font-label text-xs font-semibold py-3 px-6 rounded-lg w-fit">
+          Secure This Configuration
+        </button>
+      `;
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low py-16"><div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"><div class="flex flex-col gap-4"><a href="index.html" class="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"><img alt="Umbrella & Rain Gear Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_l90_g-5NBBHuX1wAmJWFD96CK9s8P2G13e4XaKImvRzAwmhW-ILXrGfUCZgMuUu-nsHgpDvBC5gqT49NDSmQl9LonRQczRxLbR3WGgovoWr4o7ui23z5hYVQgOC_GUv4YGOkh8kvXsFJlXLiEcUmVOFRlD8q8Dhs9p35AEeybXeNajClhcSQnHxZOlWjOvaWzRysfntUx5XtGENTLXtCOn6JYa9CvfYNDc7Zd_iaByrc3OJ3fg2n"/><span class="text-xl font-headline font-bold tracking-tight text-on-surface">Aurumbrella</span></a><p class="text-sm text-on-surface-variant">High-end editorial rain gear and specialty umbrellas crafted for the discerning individual.</p></div><div><h4 class="font-headline font-bold text-on-surface mb-4">Quick Links</h4><ul class="flex flex-col gap-2 text-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" href="#">Our Heritage</a></li><li><a class="hover:text-primary transition-colors" href="#">Care Guide</a></li><li><a class="hover:text-primary transition-colors" href="#">Store Locator</a></li><li><a class="hover:text-primary transition-colors" href="#">Sustainability</a></li></ul></div><div><h4 class="font-headline font-bold text-on-surface mb-4">Newsletter</h4><p class="text-sm text-on-surface-variant mb-4">Subscribe to receive seasonal lookbooks and archival releases.</p><div class="flex"><input class="bg-surface-container-lowest px-4 py-2 text-sm w-full outline-none focus:ring-1 focus:ring-primary" placeholder="Your email" type="email"/><button class="bg-primary text-on-primary px-4 py-2 text-sm font-medium">Join</button></div></div><div><h4 class="font-headline font-bold text-on-surface mb-4">Contact</h4><p class="text-sm text-on-surface-variant mb-2">Concierge Services</p><p class="text-sm text-on-surface-variant">support@aurumbrella.com</p></div></div><div class="max-w-7xl mx-auto px-6 lg:px-12 mt-12 pt-8 border-t border-outline-variant/15 text-center text-on-surface-variant text-sm">© 2026 Aurumbrella. All rights reserved.</div></footer>
+<script>
+// State management script
+document.addEventListener('DOMContentLoaded', () => {
+    // Navigation active state
+    let currentPage = window.location.pathname.split('/').pop() || 'home_2.html';
+    if (currentPage === '' || currentPage === 'stormshield') currentPage = 'index.html';
+    
+    document.querySelectorAll('.nav-link, .nav-link-mobile').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+            link.classList.add('nav-active');
+            link.classList.remove('text-on-surface-variant', 'text-slate-700');
+            
+            const dropdownBtn = link.closest('.group')?.querySelector('.nav-dropdown-btn');
+            if (dropdownBtn) {
+                dropdownBtn.classList.add('nav-active');
+                dropdownBtn.classList.remove('text-on-surface-variant');
+            }
+        } else {
+            link.classList.remove('nav-active');
+        }
+    });
+
+    // Mobile Hamburger Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+    const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+    if (mobileMenuBtn && mobileMenuDrawer) {
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenuDrawer.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenuDrawer.classList.remove('hidden');
+                if (mobileMenuIcon) mobileMenuIcon.textContent = 'close';
+            } else {
+                mobileMenuDrawer.classList.add('hidden');
+                if (mobileMenuIcon) mobileMenuIcon.textContent = 'menu';
+            }
+        });
+    }
+
+    // Brand name click
+    const brandElement = document.querySelector('header h1, header .brand, header img[alt*="logo" i]');
+    if (brandElement) {
+        brandElement.style.cursor = 'pointer';
+        brandElement.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    }
+
+    // Dark/Light mode and RTL/LTR persistence
+    const themeButton = [...document.querySelectorAll('button')].find(b => b.textContent.includes('dark_mode') || b.textContent.includes('light_mode'));
+    const rtlButton = [...document.querySelectorAll('button')].find(b => b.textContent.includes('swap_horiz') || b.textContent.includes('LTR') || b.textContent.includes('RTL'));
+    
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+    } else if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+    }
+
+    const savedDir = localStorage.getItem('dir');
+    if (savedDir === 'rtl') {
+        document.documentElement.setAttribute('dir', 'rtl');
+    } else if (savedDir === 'ltr') {
+        document.documentElement.setAttribute('dir', 'ltr');
+    }
+
+    if (themeButton) {
+        const newThemeBtn = themeButton.cloneNode(true);
+        themeButton.parentNode.replaceChild(newThemeBtn, themeButton);
+        
+        const iconSpan = newThemeBtn.querySelector('span');
+        if (iconSpan) {
+            iconSpan.textContent = document.documentElement.classList.contains('dark') ? 'light_mode' : 'dark_mode';
+        }
+
+        newThemeBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            
+            if (isDark) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+            
+            if (iconSpan) {
+                iconSpan.textContent = isDark ? 'light_mode' : 'dark_mode';
+            }
+        });
+    }
+
+    if (rtlButton) {
+        const newRtlBtn = rtlButton.cloneNode(true);
+        rtlButton.parentNode.replaceChild(newRtlBtn, rtlButton);
+        newRtlBtn.addEventListener('click', () => {
+            const currentDir = document.documentElement.getAttribute('dir');
+            if (currentDir === 'rtl') {
+                document.documentElement.setAttribute('dir', 'ltr');
+                localStorage.setItem('dir', 'ltr');
+            } else {
+                document.documentElement.setAttribute('dir', 'rtl');
+                localStorage.setItem('dir', 'rtl');
+            }
+        });
+    }
+
+    // Remove empty spaces
+    document.querySelectorAll('section, div.container').forEach(el => {
+        if (el.innerHTML.trim() === '' || el.children.length === 0) {
+            el.style.display = 'none';
+        }
+    });
+});
+</script>
+<style>
+/* Prevent horizontal overflow on mobile/tablet */
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+/* High Contrast Navigation Active State */
+.nav-link.nav-active, .nav-dropdown-btn.nav-active, .nav-link-mobile.nav-active {
+    color: #094cb2 !important;
+    background-color: #e0edff !important;
+    font-weight: 700 !important;
+}
+.dark .nav-link.nav-active, .dark .nav-dropdown-btn.nav-active, .dark .nav-link-mobile.nav-active {
+    color: #38bdf8 !important;
+    background-color: rgba(56, 189, 248, 0.18) !important;
+    font-weight: 700 !important;
+}
+
+/* Home Dropdown High Contrast Styles */
+.nav-dropdown-btn {
+    color: #334155 !important;
+    font-weight: 500;
+}
+.dark .nav-dropdown-btn {
+    color: #f1f5f9 !important;
+    font-weight: 500;
+}
+.nav-dropdown-btn:hover:not(.nav-active) {
+    color: #094cb2 !important;
+    background-color: #f1f5f9 !important;
+}
+.dark .nav-dropdown-btn:hover:not(.nav-active) {
+    color: #38bdf8 !important;
+    background-color: #1e293b !important;
+}
+.nav-dropdown-btn.nav-active {
+    color: #094cb2 !important;
+    background-color: #e0edff !important;
+    font-weight: 700 !important;
+    border: 1px solid #bfdbfe !important;
+}
+.dark .nav-dropdown-btn.nav-active {
+    color: #38bdf8 !important;
+    background-color: rgba(56, 189, 248, 0.2) !important;
+    font-weight: 700 !important;
+    border: 1px solid rgba(56, 189, 248, 0.35) !important;
+}
+
+.nav-dropdown-menu {
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08) !important;
+}
+.dark .nav-dropdown-menu {
+    background-color: #1e293b !important;
+    border: 1px solid #475569 !important;
+    box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.6) !important;
+}
+.nav-dropdown-menu a.nav-link {
+    color: #0f172a !important;
+    font-weight: 600 !important;
+    transition: all 0.15s ease-in-out !important;
+}
+.dark .nav-dropdown-menu a.nav-link {
+    color: #f8fafc !important;
+    font-weight: 600 !important;
+}
+.nav-dropdown-menu a.nav-link:hover:not(.nav-active) {
+    background-color: #eff6ff !important;
+    color: #094cb2 !important;
+    font-weight: 700 !important;
+}
+.dark .nav-dropdown-menu a.nav-link:hover:not(.nav-active) {
+    background-color: #334155 !important;
+    color: #38bdf8 !important;
+    font-weight: 700 !important;
+}
+.nav-dropdown-menu a.nav-link.nav-active {
+    background-color: #094cb2 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 6px rgba(9, 76, 178, 0.25) !important;
+}
+.dark .nav-dropdown-menu a.nav-link.nav-active {
+    background-color: #0284c7 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4) !important;
+}
+.nav-dropdown-menu a.nav-link.nav-active:hover {
+    background-color: #073b8a !important;
+    color: #ffffff !important;
+}
+.dark .nav-dropdown-menu a.nav-link.nav-active:hover {
+    background-color: #0369a1 !important;
+    color: #ffffff !important;
+}
+
+/* Ensure text is visible in dark mode */
+.dark body {
+    background-color: #0f172a !important;
+    color: #f8fafc !important;
+}
+
+/* Base surface overrides */
+.dark .bg-surface {
+    background-color: #0f172a !important;
+}
+.dark .bg-surface-container-lowest,
+.dark .bg-surface-container-low {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+}
+.dark .bg-surface-container,
+.dark .bg-surface-container-high,
+.dark .bg-surface-container-highest {
+    background-color: #334155 !important;
+    border: 1px solid #475569 !important;
+}
+
+.dark [class*="bg-surface"] {
+    color: #f8fafc !important;
+}
+
+/* Header */
+.dark header[class*="bg-surface"] {
+    background-color: rgba(15, 23, 42, 0.92) !important;
+    border-bottom: 1px solid #1e293b !important;
+}
+
+/* Text overrides */
+.dark [class*="text-on-surface"] {
+    color: #f1f5f9 !important;
+}
+.dark .text-primary {
+    color: #38bdf8 !important;
+}
+.dark .text-tertiary {
+    color: #facc15 !important;
+}
+.dark .bg-primary-container, .dark .bg-primary-container\/20 {
+    background-color: rgba(56, 189, 248, 0.15) !important;
+}
+.dark .bg-primary {
+    background-color: #0284c7 !important;
+}
+.dark [class*="from-primary"] {
+    background-image: linear-gradient(to right, #0369a1, #0284c7) !important;
+}
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6, .dark p, .dark a {
+    color: inherit;
+}
+.dark .bg-white {
+    background-color: #1e293b !important;
+}
+.dark [class*="text-gray-"] {
+    color: #e2e8f0 !important;
+}
+.dark span.material-symbols-outlined {
+    color: inherit !important;
+}
+
+/* Footer specific fixes */
+.dark footer input, .dark footer textarea {
+    background-color: #0f172a !important;
+    border: 1px solid #334155 !important;
+    color: #f8fafc !important;
+}
+.dark footer [class*="bg-surface-container"] {
+    background-color: #0f172a !important; 
+}
+
+/* Remove unwanted empty space */
+section:empty {
+    display: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+</style>
+
+</body></html>
